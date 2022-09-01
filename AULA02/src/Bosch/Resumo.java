@@ -6,32 +6,32 @@ public class Main {
 
     public static void main(String[] args) {
         //TIPOS DE VARIAVEIS INTEIRAS
-//        byte meuByte=127;
-//        System.out.printf("Tamanho do byte: %d\n", meuByte);
-//        short meuShort=32767;
-//        System.out.println("Tamanho do short: "+meuShort);
-//        int meuInt = 2_147_483_647;
-//        System.out.printf("Tamanho do int: %d\n ", meuInt);
-//        long meuLong = 9_223_372_036_854_775_807L;
-//        System.out.printf("Tamanho do Long: %d\n ", meuLong);
+        byte meuByte=127;
+       System.out.printf("Tamanho do byte: %d\n", meuByte);
+       short meuShort=32767;
+        System.out.println("Tamanho do short: "+meuShort);
+        int meuInt = 2_147_483_647;
+        System.out.printf("Tamanho do int: %d\n ", meuInt);
+        long meuLong = 9_223_372_036_854_775_807L;
+        System.out.printf("Tamanho do Long: %d\n ", meuLong);
 
         //VARIAVEIS TIPO REAL
-//            float meuFloat = 3.4e+38F;
-//        System.out.printf("Valor do Float: %f\n", meuFloat);
-//            double meuDouble = 1.7e+308;
-//        System.out.printf("O valor de Double é: %f\n", meuDouble);
+            float meuFloat = 3.4e+38F;
+        System.out.printf("Valor do Float: %f\n", meuFloat);
+            double meuDouble = 1.7e+308;
+        System.out.printf("O valor de Double é: %f\n", meuDouble);
         //
 
         //CARACTERE
-//            char meuCaractere = 'a';
-//        System.out.printf("Meu Char é: %c\n",meuCaractere);
-//            boolean meuBoolean= true;
-//        System.out.printf("Meu booleando é: %b\n",meuBoolean);
+            char meuCaractere = 'a';
+        System.out.printf("Meu Char é: %c\n",meuCaractere);
+            boolean meuBoolean= true;
+        System.out.printf("Meu booleando é: %b\n",meuBoolean);
 
         //STRING
 
- //        String minhaString= "bosch";
-//        System.out.printf("Minha string é %s",minhaString);
+         String minhaString= "bosch";
+        System.out.printf("Minha string é %s",minhaString);
 
 //        var a=10;
 //        System.out.println(a);
