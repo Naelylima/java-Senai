@@ -46,16 +46,16 @@ public class Veiculo {
                     + "\n[3] -Escolher\n"
             );
             System.out.print("Escolha uma opção: ");
-             int opcaoMenu = op1.nextInt();
+            int opcaoMenu = op1.nextInt();
 
             if (opcaoMenu == 0) {
                 break;
             } else if (opcaoMenu == 1) {
-              adicionarVeiculo();
+                adicionarVeiculo();
             } else if (opcaoMenu == 2){
                 printaVeiculos();
             } else if (opcaoMenu == 3){
-                escolha();
+                menuModelos();
             }
 
         }
@@ -63,7 +63,7 @@ public class Veiculo {
 
     void detalheVeiculo(){
         System.out.print("Modelo do veiculo: ");
-        String modelo = op1.nextLine();
+        modelo = op1.nextLine();
 
         System.out.print("Consumo por litro: ");
         consumo = op1.nextDouble();
@@ -78,7 +78,7 @@ public class Veiculo {
 
 
         System.out.println("-------------------------");
-        System.out.println("Veiculo Adicionado com sucesso");
+        System.out.println("*** Veiculo Adicionado com sucesso ***\n");
 
     }
     void veiculoAdicionado(){
@@ -128,7 +128,7 @@ public class Veiculo {
             else if (opcaoAdicionar == 3){
                 System.out.println("-------------------------");
                 System.out.println("Por favor digite as especificações a seguir: ");
-                
+
                 detalheVeiculo();
                 modeloOutro.add(modelo);
                 ConsumoOutro.add(consumo);
@@ -146,44 +146,82 @@ public class Veiculo {
         System.out.println("Modelos disponiveis de moto: "+ modeloOutro);
 
     }
-    void escolha(){
-            if(modeloCarro.size()>0){
-                for(int i=0; i<modeloCarro.size(); i++){
-                    System.out.println("------------------");
-                    System.out.println("Veículo carro nº: "+i);
-                    System.out.print("\nVeiculo: "+modeloCarro.get(i));
-                    System.out.print("\nConsumo: "+ ConsumoCarro.get(i));
-                    System.out.print("\nTanque: "+ tanqueCarro.get(i));
-                    System.out.print("\nVelocidade: "+ velocidadeCarro.get(i));
-                    System.out.println("------------------");
-        }
-            if(modeloMoto.size()>0){
-                for(int i=0; i<modeloMoto.size(); i++){
-                    System.out.println("------------------");
-                    System.out.println("\nVeículo moto nº: "+i);
-                    System.out.print("\nVeiculo: "+modeloMoto.get(i));
-                    System.out.print("\nConsumo: "+ ConsumoMoto.get(i));
-                    System.out.print("\nTanque: "+ tanqueMoto.get(i));
-                    System.out.print("\nVelocidade: "+ velocidadeMoto.get(i));
-                    System.out.println("------------------");
-                }
+    void menuModelos(){
+        while (true){
+            System.out.println("\n----------MODELOS------------");
+            System.out.println("[1] - Carros" +
+                    "\n[2] - Motos" +
+                    "\n[3] - Outros" +
+                    "\n[4] - Sair");
+            System.out.print("Digite a opção que deseja visualizar: ");
+            int modeloEscolhido = op1.nextInt();
+            if (modeloEscolhido == 4){
+                break;
             }
-            if(modeloOutro.size()>0){
-                for(int i=0; i<modeloOutro.size(); i++){
-                    System.out.println("------------------");
-                    System.out.println("\nVeículo Outro nº: "+i);
-                    System.out.print("\nVeiculo: "+modeloOutro.get(i));
-                    System.out.print("\nConsumo: "+ ConsumoOutro.get(i));
-                    System.out.print("\nTanque: "+ tanqueOutro.get(i));
-                    System.out.print("\nVelocidade: "+ velocidadeOutro.get(i));
-                    System.out.println("------------------");
+            verificarMenuModelos(modeloEscolhido);
+        }
 
+
+    }
+    void verificarMenuModelos(int opcao){
+            if (opcao == 1){
+                if(modeloCarro.size()>0){
+                    for(int i=0; i<modeloCarro.size(); i++){
+                    System.out.println("\n-------------------------------");
+                        System.out.println("Veículo carro nº: ["+i+"]");
+                        System.out.print("\nVeiculo: "+modeloCarro.get(i));
+                        System.out.print("\nConsumo: "+ ConsumoCarro.get(i));
+                        System.out.print("\nTanque: "+ tanqueCarro.get(i));
+                        System.out.print("\nVelocidade: "+ velocidadeCarro.get(i));
+                    }
                 }
+                else {
+                    System.out.println("\n******************************");
+                    System.out.println("Não existem opções disponiveis");
+                    System.out.println("******************************");
+                }
+
             }
-        }
+            else if (opcao == 2){
+                if(modeloMoto.size()>0){
+                    for(int i=0; i<modeloMoto.size(); i++){
+                    System.out.println("----------------------------------");
+                        System.out.println("\nVeículo moto nº: ["+i+"]");
+                        System.out.print("\nVeiculo: "+modeloMoto.get(i));
+                        System.out.print("\nConsumo: "+ ConsumoMoto.get(i));
+                        System.out.print("\nTanque: "+ tanqueMoto.get(i));
+                        System.out.print("\nVelocidade: "+ velocidadeMoto.get(i));
+                    }
+                }
+                else {
+                    System.out.println("\n******************************");
+                    System.out.println("Não existem opções disponiveis");
+                    System.out.println("******************************");
+                }
+
+            }
+            else if (opcao == 3){
+                if(modeloOutro.size()>0){
+                    for(int i=0; i<modeloOutro.size(); i++){
+                     System.out.println("--------------------------------");
+                        System.out.println("\nVeículo Outro nº: ["+i+"]");
+                        System.out.print("\nVeiculo: "+modeloOutro.get(i));
+                        System.out.print("\nConsumo: "+ ConsumoOutro.get(i));
+                        System.out.print("\nTanque: "+ tanqueOutro.get(i));
+                        System.out.print("\nVelocidade: "+ velocidadeOutro.get(i));
+                    }
+                }
+                else {
+                    System.out.println("\n******************************");
+                    System.out.println("Não existem opções disponiveis");
+                    System.out.println("******************************");
+                }
+
+            }
 
     }
 }
+
 
 
 
